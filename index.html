@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"acb081d69e","agent":"","transactionName":"bwBQNUYHXBZQB0ZRW1ZKdBRaBUYMXgodTlFWEFdPQg9XEkJeUVlAXQJdE005RABfEVc=","applicationID":"154016829","errorBeacon":"bam.nr-data.net","applicationTime":6476}</script>
+  <meta charset="utf-8">
+
+
+
+
+
+
+    <title>weddings.com</title>
+    <style>
+    	#header
+    	{
+    		background-color: blue;
+    		height: 69px;
+
+    	}
+    	#city
+    	{
+    		margin-top: 30px;
+    	}
+    	#logo
+    	{
+    	  padding-left: 100px;
+
+
+    	}
+      #call
+      {
+        padding-top: 30px;
+        
+        padding-left: 200px;
+        color: white;
+      }
+      
+
+      #icont
+      { padding-right: 10px;
+        padding-top: 15px;
+        height: 40px;}
+
+
+        #iconf
+      { padding-right: 10px;
+        padding-top: 15px;
+        height: 40px;
+          }
+      #iconi
+      {
+        height: 50px;
+        padding-top: 20px;
+        padding-right: 50px;
+      }
+      #icons
+      {
+        padding-right: 100px;
+      }
+    	#glyphicon-home
+    	{
+    		padding-top: 15px;
+      }
+      .navbar-brand
+      {
+        width:15px;
+        height: 15px;
+      }
+      
+      #headmenu
+      {
+        height: 20px;
+      }
+
+   #img
+   {
+    padding-right: 50px;
+    padding-top: -20px;
+     }
+
+
+section
+{
+  padding-top: 40px;
+}
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+
+.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circlue { border-radius: 50px; }
+.btn.btn-outline { background-color: transparent; }
+
+.navbar-nav.navbar-right .btn:not(.collapsed) {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.navbar-default .nav-collapse,
+.navbar.navbar-inverse .nav-collapse {
+    height: auto !important;
+    transition: transform 0.3s;
+    transform: translate(0px,-50px);
+}
+.navbar.navbar-default .nav-collapse.in,
+.navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px,0px);
+}
+
+
+@media screen and (max-width: 767px) {
+    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+    
+    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+    .navbar .nav-collapse .navbar-form { margin: 0; }
+    .nav-collapse>li { float: none; }
+   
+    .navbar.navbar-default .nav-collapse,
+    .navbar.navbar-inverse .nav-collapse {
+        transform: translate(-100%,0px);
+    }
+    .navbar.navbar-default .nav-collapse.in,
+    .navbar.navbar-inverse .nav-collapse.in {
+        transform: translate(0px,0px);
+    }
+    
+    .navbar.navbar-default .nav-collapse.slide-down,
+    .navbar.navbar-inverse .nav-collapse.slide-down {
+        transform: translate(0px,-100%);
+    }
+    .navbar.navbar-default .nav-collapse.in.slide-down,
+    .navbar.navbar-inverse .nav-collapse.in.slide-down {
+        transform: translate(0px,0px);
+    } 
+}
+
+h2
+{
+  font-style:Lemon;
+}
+#part1
+{
+  background-color: red;
+  height: 250px;
+}
+#part
+{
+  background-color: green;
+  height: 300px;
+}
+
+#imgsec1
+{
+  height: 200px;
+  width: 270px;
+ padding-top: 5px;
+
+ 
+
+}
+#btn
+{ height:30px;
+  
+  width: 270px;
+  background-color: blue;
+  color: white;
+}
+#sender1
+{
+  background-color: white;
+  height: 80px;
+}
+footer
+{
+  padding-top: 5px;
+  background-color: blue;
+  height: 100px;
+  color: white;
+  padding-left: 500px;
+
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+}
+
+#find
+{ 
+  width: 100%;
+  height: 500px;
+}
+
+    	
+    </style>
+    
+
+
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+    <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+<header>
+<div id="header">	
+<div class="container">
+ <div class="row">
+ 	<div class="col-xs-6 col-md-4">
+  
+    
+				<div class="select-section"id="city" >
+					<select class="form-control city" id="select-city">
+						
+						
+						
+							<option value=Idappadi  >Idappadi</option>
+						
+							<option value="Salem" selected  >Salem</option>
+						
+							<option value="Erode"  >Erode</option>
+						
+							<option value="Thirichangode"  >Thirichangode</option>
+						
+							<option value="Sankakiri"  >Sankakiri</option>
+						
+							<option value="Pavani"  >Pavani</option>
+						
+							<option value="Mettur"  >Mettur</option>
+						
+							<option value="Tharmapuri"  >Tharmapuri</option>
+						
+							<option value="Tharamangalam"  >Tharamangalam</option>
+						
+							<option value="Ombalur"  >Ombalur</option>
+						
+							<option value="Namakkal"  >Namakkal</option>
+						
+							<option value="Coimbuthur"  >Coimbuthur</option>
+						
+						
+						<option value="" disabled="disabled">------------------</option>
+						<option value="destination-wedding" >Destination Wedding</option>
+					</select>
+
+					<!-- <div class="select-service">
+						What are you looking for?
+					</div> -->
+
+					
+					<div class="clearfix"></div>
+				</div>
+				
+
+
+
+
+
+
+    </div>		
+ 	<div class="col-xs-6 col-md-4" >
+ 		<img src="images/logo.png" id="logo">
+
+ 	</div>	
+    <div class="col-xs-6 col-md-4" >
+    <!-- 
+     <img id="icont" src="images/twitter.png">
+     <img id="iconf" src="images/facebook.png">
+     <img id="iconi" src="images/instagram.png">
+   -->
+   <p id="call"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>    6382276774</p>
+  </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+   <div id ="headmenu">
+
+ 
+    <!-- Second navbar for categories -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Venues</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">photos</a></li>
+            <!--
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>btn btn-default btn-outline btn-circle collapsed
+            -->
+             <a class=" btn btn-default btn-outline btn-squre collapsed "  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Vendors</a>
+            </li>
+          </ul>
+          <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
+            <li><a href="https://sakthivel12345678.github.io/photographys/"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>Photography</a></li>
+            <li><a href="https://sakthivel12345678.github.io/mehendi/"><span class="glyphicon glyphicon-grain" aria-hidden="true">MehendiArtists</a></li>
+            <li><a href="https://sakthivel12345678.github.io/makeup/"><span class="glyphicon glyphicon-eye-open" aria-hidden="true">MakeupArtists</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-headphones" aria-hidden="true">Djs</a></li>
+            <li><a href="https://sakthivel12345678.github.io/djs/">Wedding planing</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true">Gifting</a></li>
+             <li><a href="https://sakthivel12345678.github.io/allweddings/">| <span class="glyphicon glyphicon-home" aria-hidden="true">AllWeddingsVendors </a></li>
+
+             
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+    
+</div>
+</header>
+<section>
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <h2>Popular Wedding Venues</h2>
+   <div class="row">
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall5.jpg" id="imgsec1"></a>
+
+  <h3>Hotel salem</h3>
+  
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+
+  </div>
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall6.jpg" id="imgsec1"></a>
+
+<h3>Hotel bangalur</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+    </div>
+
+  <!-- Add the extra clearfix for only the r<a href=""><img  src="images/01.jpg" id="imgsec1"></a>equired viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall7.jpg" id="imgsec1"></a>
+
+<h3>Hotel chennai</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+  </div>
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall8.jpg" id="imgsec1"></a>
+
+<h3>Hotel idappadi</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+
+   <div class="row">
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/01.jpg" id="imgsec1"></a>
+
+  <h3>Hotel Namakkal</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+
+  </div>
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall2.jpg" id="imgsec1"></a>
+
+<h3>Hotel Erode</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+    </div>
+
+  <!-- Add the extra clearfix for only the r<a href=""><img  src="images/01.jpg" id="imgsec1"></a>equired viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall3.jpg" id="imgsec1"></a>
+
+<h3>Hotel Pavaani</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+  </div>
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/hall4.jpg" id="imgsec1"></a>
+
+<h3>Hotel Tharmaburi</h3>
+  <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 200-750 capacity</p>
+
+  </div>
+</div>
+<a href=""><h4>See All</h4></a>
+</div>
+
+
+
+
+
+<div class="container">
+   <h2>Wedding Vendors</h2>
+ <div class="row">
+  <div class="col-xs-6 col-sm-3" id="contain"><a href="https://sakthivel12345678.github.io/djs/"><img  src="images/djs.jpg" id="imgsec1"></a>
+  <a href="https://sakthivel12345678.github.io/djs/"><h3 class="centered">DJS</h3></a>
+   
+  
+
+  </div>
+  <div class="col-xs-6 col-sm-3" id="contain"><a href="https://sakthivel12345678.github.io/mehendi/"><img  src="images/meha2.jpg" id="imgsec1"></a>
+  <a href="https://sakthivel12345678.github.io/mehendi/"><h3 class="centered">MEHENDI</h3></a>
+    </div>
+
+  <!-- Add the extra clearfix for only the r<a href=""><img  src="images/01.jpg" id="imgsec1"></a>equired viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3" id="contain"><a href="https://sakthivel12345678.github.io/photographys/"><img  src="images/p5.jpg" id="imgsec1"></a>
+<a href="https://sakthivel12345678.github.io/photographys/"><h3 class="centered">PHOTOGRAPHY</h3></a>
+  </div>
+  <div class="col-xs-6 col-sm-3" id="contain"><a href="https://sakthivel12345678.github.io/makeup/"><img  src="images/ma1.jpg" id="imgsec1"></a>
+   <a href="https://sakthivel12345678.github.io/makeup/"> <h3 class="centered">MAKEUP</h3></a>
+  </div>
+</div>
+<a href="https://sakthivel12345678.github.io/allweddings/"><h4>See All</h4></a>
+</div>
+
+
+
+
+<div class="container">
+  <h2>Social Media</h2>
+   <div class="row">
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/face.jpg" id="imgsec1"></a>
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default" id="btn">Facebook</button>
+  </div>
+  </div>
+  
+
+  </div>
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/ins.jpg" id="imgsec1"></a>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default" id="btn">instagram</button>
+  </div>
+  </div>
+
+  
+    </div>
+
+  <!-- Add the extra clearfix for only the r<a href=""><img  src="images/01.jpg" id="imgsec1"></a>equired viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/2.jpg" id="imgsec1"></a>
+   
+
+
+   <div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default" id="btn">twitter</button>
+  </div>
+  </div>
+
+
+  
+  </div>
+  <div class="col-xs-6 col-sm-3"><a href=""><img  src="images/1.jpg" id="imgsec1"></a>
+
+
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default" id="btn">Email</button>
+  </div>
+  </div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+<div id="sender1">
+
+
+
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-xs-6 col-md-2">
+
+    
+
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-8" >
+    
+    
+    </div>
+
+
+    <div class="col-xs-6 col-md-2">
+
+
+    
+    </div>
+  </div>
+</div>
+
+ </div> 
+
+<footer>
+
+
+    <p>Copy @ Right All are Reseved </p>
+    <a href="https://twitter.com/"><img src="images/twitter.png"></a>
+   <a href="https://twitter.com/"> <img src="images/facebook.png"></a>
+    <a href="https://twitter.com/"><img src="images/instagram.png"></a>
+    
+
+    
+</footer>
+
+
+
+
+
+
+
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!--
+Wedding Venues
+Wedding Photographers
+Bridal Makeup
+Family Makeup 
+                                        
+                        Groom Wear
+Wedding Decorators
+Wedding Planner
+Wedding Cards
+                                 Wedding Videography
+Bridal Mehendi
+Wedding Cakes
+   
+
+Wedding Catering
+Trousseau Packers
+DJ
+                           Sangeet Choreographers
+Wedding Accessories
+Wedding Favors-->
